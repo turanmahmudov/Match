@@ -1,0 +1,7 @@
+[Desktop Entry]
+_Name=Match
+Exec=Match
+Icon=Match/Match.png
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true

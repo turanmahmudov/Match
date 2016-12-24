@@ -1,0 +1,16 @@
+{
+    "name": "match.turan-mahmudov-l",
+    "description": "description of Match",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Match",
+    "hooks": {
+        "Match": {
+            "apparmor": "Match/Match.apparmor",
+            "desktop":  "Match/Match.desktop"
+        }
+    },
+    "version": "0.1",
+    "maintainer": "Turan Mahmudov <turan.mahmudov@gmail.com>",
+    "framework" : "ubuntu-sdk-15.04.6"
+}
+

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Main.qml</file>
+        <file>qml/js/Storage.js</file>
+    </qresource>
+</RCC>
