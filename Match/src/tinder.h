@@ -22,6 +22,9 @@ public slots:
     void reportUser(QString user_id, QString cause_id);
     void updateLocation(QString lat, QString lon);
     void sendMessage(QString match_id, QString message);
+    void like(QString user_id);
+    void dislike(QString user_id);
+    void superlike(QString user_id);
 
 private:
     QByteArray token;
@@ -32,10 +35,13 @@ signals:
 
     void recsFinished(QVariant answer);
     void updateProfileFinished(QVariant answer);
-    void updatesFinished(QVariant updates);
+    void updatesFinished(QVariant answer);
     void reportUserFinished(QVariant answer);
     void updateLocationFinished(QVariant answer);
     void sendMessageFinished(QVariant answer);
+    void likeFinished(QVariant answer);
+    void dislikeFinished(QVariant answer);
+    void superlikeFinished(QVariant answer);
 
 private slots:
     void authFinish(QVariant auth);

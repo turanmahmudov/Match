@@ -89,7 +89,7 @@ MainView {
     }
 
     Component.onCompleted: {
-        tinder.auth("EAAGm0PX4ZCpsBABqngHNYsKYyGxO1cKNOX4RTGCZCMVk9xAJ5W5WO3XrHdVXLMbiJMG7ythh3borfbp8vlRaYCm6y6anwxzSpIWYUppZC6DaiAaeCKmozUj1JpQpUORHqmxVtORZClkW8CnVbvNSnAfrCuZBNd2FfCfpR6ycZCbgZDZD")
+        tinder.auth("EAAGm0PX4ZCpsBAHQOuQ4IGoRvp8Lt6v7fMmeZB8yimML4agGdyKP4WWpqPxB22ZBjdAFFq2TquH66grJsAqTzbizYAq6J7uRfe55cauNEejwufZBorxKjAtKsl2qJ5w7tAWOFP9W2xieBZBRwqLJQBHnP1Ejky0ZCL8m2uAYRDVAZDZD")
 
         pageStack.push(tabs);
     }
@@ -106,12 +106,11 @@ MainView {
             pageStack.push(tabs);
 
             tinder.recs()
+            tinder.updates()
         }
         onAuthNotFinished: {
-
-        }
-        onRecsFinished: {
-            console.log(answer)
+            var result = JSON.parse(answer)
+            console.log(result.error)
         }
     }
 }

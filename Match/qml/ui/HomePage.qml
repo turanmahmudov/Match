@@ -2,9 +2,10 @@ import QtQuick 2.4
 import QtQuick.LocalStorage 2.0
 import Ubuntu.Components 1.3
 
-//import "../components"
+import "../components"
 
 import "../js/Storage.js" as Storage
+import "../js/Helper.js" as Helper
 
 Page {
     id: homePage
@@ -27,6 +28,9 @@ Page {
         trailingActionBar.actions: [matchesAction]
     }
 
+    property var people
+    property int person: 0
+
     MouseArea {
         anchors.fill: parent
         property string direction: "None"
@@ -43,6 +47,57 @@ Page {
             } else if (diff > 0) {
                 tabs.selectedTabIndex = 1
             }
+        }
+    }
+
+    function nextPerson() {
+        person++
+        loadPerson()
+    }
+
+    function loadPerson() {
+        recommendationItem.rec_user = people[person]
+    }
+
+    Connections{
+        target: tinder
+        onRecsFinished: {
+            //console.log(answer)
+            var result = JSON.parse(answer)
+            people  = result['results']
+            loadPerson()
+        }
+        onLikeFinished: {
+            console.log(answer)
+            var result = JSON.parse(answer)
+            if (result.match === false) {
+                nextPerson()
+            }
+        }
+        onDislikeFinished: {
+            console.log(answer)
+            var result = JSON.parse(answer)
+            if (result.status === 200) {
+                nextPerson()
+            }
+        }
+        onSuperlikeFinished: {
+            console.log(answer)
+            var result = JSON.parse(answer)
+            if (result.status === 200) {
+                nextPerson()
+            }
+        }
+    }
+
+    Recommendation {
+        id: recommendationItem
+        anchors {
+            left: parent.left
+            right: parent.right
+            top: homePage.header.bottom
+            bottom: parent.bottom
+            margins: units.gu(1)
         }
     }
 }

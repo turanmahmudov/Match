@@ -32,7 +32,7 @@ void Tinder::authFinish(QVariant auth)
 
     //qDebug() << "Reply: " << auth_obj;
 
-    if(auth_obj["code"].toString().toUtf8() == "401")
+    if(auth_obj["code"].toDouble() == 401)
     {
         emit authNotFinished(auth);
     }
@@ -110,4 +110,31 @@ void Tinder::sendMessage(QString match_id, QString message)
     sendMessageRequest->token = this->token;
     sendMessageRequest->request("user/matches/"+match_id, data);
     QObject::connect(sendMessageRequest,SIGNAL(replySrtingReady(QVariant)),this,SIGNAL(sendMessageFinished(QVariant)));
+}
+
+void Tinder::like(QString user_id)
+{
+    TinderRequest *likeRequest = new TinderRequest();
+    QJsonObject data;
+    likeRequest->token = this->token;
+    likeRequest->request("like/"+user_id, data);
+    QObject::connect(likeRequest,SIGNAL(replySrtingReady(QVariant)),this,SIGNAL(likeFinished(QVariant)));
+}
+
+void Tinder::dislike(QString user_id)
+{
+    TinderRequest *likeRequest = new TinderRequest();
+    QJsonObject data;
+    likeRequest->token = this->token;
+    likeRequest->request("pass/"+user_id, data);
+    QObject::connect(likeRequest,SIGNAL(replySrtingReady(QVariant)),this,SIGNAL(dislikeFinished(QVariant)));
+}
+
+void Tinder::superlike(QString user_id)
+{
+    TinderRequest *likeRequest = new TinderRequest();
+    QJsonObject data;
+    likeRequest->token = this->token;
+    likeRequest->request("like/"+user_id+"/super", data);
+    QObject::connect(likeRequest,SIGNAL(replySrtingReady(QVariant)),this,SIGNAL(superlikeFinished(QVariant)));
 }

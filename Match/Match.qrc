@@ -6,5 +6,9 @@
         <file>qml/images/tndr.svg</file>
         <file>qml/ui/OptionsPage.qml</file>
         <file>qml/ui/MatchesPage.qml</file>
+        <file>qml/components/Recommendation.qml</file>
+        <file>qml/js/Helper.js</file>
+        <file>qml/components/PersonActionButton.qml</file>
+        <file>qml/components/CustomBorder.qml</file>
     </qresource>
 </RCC>
