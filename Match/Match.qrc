@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>Main.qml</file>
         <file>qml/js/Storage.js</file>
+        <file>qml/ui/HomePage.qml</file>
+        <file>qml/images/tndr.svg</file>
+        <file>qml/ui/OptionsPage.qml</file>
+        <file>qml/ui/MatchesPage.qml</file>
     </qresource>
 </RCC>

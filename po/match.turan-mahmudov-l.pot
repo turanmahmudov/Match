@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-24 19:03+0000\n"
+"POT-Creation-Date: 2016-12-25 13:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: /home/turan/Apps/Match/Match/Main.qml:26
+#: /home/turan/Apps/Match/Match/qml/ui/OptionsPage.qml:13
+msgid "Options"
+msgstr ""
+
+#: /home/turan/Apps/Match/Match/Main.qml:34
+#: /home/turan/Apps/Match/Match/qml/ui/HomePage.qml:13
 #: /home/turan/Apps/build-Match-UbuntuSDK_for_desktop_GCC_amd64_ubuntu_sdk_16_04-Debug/Match/Match.desktop.h:1
 msgid "Match"
+msgstr ""
+
+#: /home/turan/Apps/Match/Match/Main.qml:42
+#: /home/turan/Apps/Match/Match/qml/ui/MatchesPage.qml:13
+msgid "Matches"
 msgstr ""
